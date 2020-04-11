@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormArray } from '@angular/forms';
 import { Product } from '../../models/product.interface';
 
 @Component({
@@ -33,7 +33,7 @@ export class StockInventoryComponent implements OnInit {
     { id: 5, price: 600, name: 'Apple Watch' },
   ];
 
-  form = new FormGroup({
+  form = this.fb.group({
     store: new FormGroup({
       branch: new FormControl(),
       code: new FormControl()
@@ -46,7 +46,7 @@ export class StockInventoryComponent implements OnInit {
   });
 
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void { }
 
