@@ -39,5 +39,7 @@ export class StockSelectorComponent implements OnInit {
   ngOnInit(): void { }
   onAdd() {
     this.added.emit(this.parent.get('selector').value);
+    // tslint:disable-next-line:comment-format
+    //this.parent.reset();
   }
 }
